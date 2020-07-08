@@ -1,0 +1,9 @@
+# micro-weather-basic
+# 技术
+  1. SpringBoot
+  2. Gradle
+  3. Lombok
+  4. HttpClient(RestTemple)
+ # 实现
+  1. 获取天气数据
+  2. 展示
