@@ -1,0 +1,40 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.deerlili.spring.cloud'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	// mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+	// 阿里云仓库
+	maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// 该依赖用于编译阶段
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+	// springfox-swagger2
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	// springfox-swagger-ui
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+	// swagger-bootstrap-ui
+	compile group: 'com.github.xiaoymin', name: 'swagger-bootstrap-ui', version: '1.9.3'
+
+	// 该以来用于测试阶段
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
